@@ -2,18 +2,16 @@ import { WebSocketServer, type WebSocket } from 'ws';
 import { randomBytes } from 'crypto';
 const log = console.log;
 
+const dict: DataDict = { };
 setTimeout(() => {
-    log('Starting...')
     const wss = new WebSocketServer({ port: 8080 });
-
-    const dict: DataDict = {};
     const listeners: Dict<WebSocket> = {};
 
     function syncDict(upd: DataDict) {
-        let updates: (Task | List | Group | Timer)[] = [];
+        let updates: (AllData)[] = [];
         for (let id in upd) {
-            const o1 = dict[id] || { time: 0 } as Task | List | Group | Timer;
-            const o2 = upd[id] || { time: 0 } as Task | List | Group | Timer;
+            const o1 = dict[id] || { time: 0 } as AllData;
+            const o2 = upd[id] || { time: 0 } as AllData;
 
             if (o2.time !== o1.time) {
                 let o = o2.time > o1.time ? o2 : o1;
@@ -46,4 +44,11 @@ setTimeout(() => {
 
         ws.send(JSON.stringify(dict));
     });
-})
+
+    log('WS started on :8080')
+});
+
+setInterval(() => Object.values(dict).forEach(({ id, time, del }) => {
+    // Permanently Delete items that were deleted more than a week ago
+    if (del && Date.now() - time > 1000 * 60 * 60 * 24 * 7) delete dict[id];
+}), 1000 * 60 * 60 /* Every Hour */);

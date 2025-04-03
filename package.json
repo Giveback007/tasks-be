@@ -4,8 +4,8 @@
   "description": "",
   "exports": "./dist/main.js",
   "scripts": {
-    "server": "tsx server/main.ts",
-    "server:dev": "tsx watch --inspect server/main.ts",
+    "server": "tsx src/main.ts",
+    "dev": "tsx watch --inspect src/main.ts",
     "build": "pkgroll",
     "start": "node dist/main.js"
   },
