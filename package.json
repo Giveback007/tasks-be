@@ -2,22 +2,22 @@
   "name": "checklist",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "exports": "./dist/main.js",
   "scripts": {
     "server": "tsx server/main.ts",
-    "server:dev": "tsx watch --inspect server/main.ts"
+    "server:dev": "tsx watch --inspect server/main.ts",
+    "build": "pkgroll"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.6.1",
   "dependencies": {
-    "express": "^5.1.0",
     "tsx": "^4.19.3",
     "ws": "^8.18.1"
   },
   "devDependencies": {
-    "@types/express": "^5.0.1",
+    "pkgroll": "^2.12.1",
     "@types/node": "^22.13.14",
     "@types/ws": "^8.18.1"
   }
