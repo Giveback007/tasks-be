@@ -1,0 +1,64 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Node.js",
+    "ts-node": {
+        "transpileOnly": true,
+        "files": true,
+        "esm": true
+    },
+    "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "target": "ESNext",
+        "lib": ["ESNext", "DOM"],
+        "baseUrl": "./",
+        "rootDir": "./",
+        "outDir": "./dist",
+        "allowJs": true,
+        "checkJs": true,
+        "declaration": false,
+        "removeComments": false,
+        "isolatedModules": false,
+        "importHelpers": true,
+        "downlevelIteration": true,
+        "sourceMap": true,
+        "pretty": true,
+
+        /* Additional Options */
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+
+        /* -- Strict Type-Checking Options -- */
+        "strict": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "alwaysStrict": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "strictFunctionTypes": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": true,
+        "strictBindCallApply": true,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noFallthroughCasesInSwitch": true,
+        "useUnknownInCatchVariables": false,
+        "verbatimModuleSyntax": true,
+
+        /* -- Module Resolution Options -- */
+        "paths": {
+            "*": ["node_modules/*"]
+        },
+        "typeRoots": [
+            "./node_modules/@types",
+            "./**/@types"
+        ],
+
+    },
+    "exclude": ["./node_modules"]
+}
