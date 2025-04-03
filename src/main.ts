@@ -24,10 +24,9 @@ setTimeout(() => {
 
         if (updates.length) {
             console.log(`--- SEND ${updates.length}: ${new Date().toLocaleTimeString()} ---`)
-            const updObj: DataDict = {};
-            updates.map(x => updObj[x.id] = dict[x.id] = x);
+            updates.map(x => dict[x.id] = x);
 
-            const jsonStr = JSON.stringify(updObj);
+            const jsonStr = JSON.stringify(dict);
             Object.values(listeners).map(ws => ws.send(jsonStr))
         }
     }

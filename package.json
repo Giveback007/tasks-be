@@ -14,10 +14,10 @@
   "license": "ISC",
   "packageManager": "pnpm@10.6.1",
   "dependencies": {
-    "tsx": "^4.19.3",
     "ws": "^8.18.1"
   },
   "devDependencies": {
+    "tsx": "^4.19.3",
     "pkgroll": "^2.12.1",
     "@types/node": "^22.13.14",
     "@types/ws": "^8.18.1"
