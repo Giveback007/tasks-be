@@ -6,7 +6,8 @@
   "scripts": {
     "server": "tsx server/main.ts",
     "server:dev": "tsx watch --inspect server/main.ts",
-    "build": "pkgroll"
+    "build": "pkgroll",
+    "start": "node dist/main.js"
   },
   "keywords": [],
   "author": "",
