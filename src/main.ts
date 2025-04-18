@@ -24,6 +24,8 @@ setTimeout(() => {
             console.log(`--- SEND ${updates.length}: ${new Date().toLocaleTimeString()} ---`)
             updates.map(x => dict[x.id] = x);
 
+            if (dict['TIMER']) updates.push(dict['TIMER']);
+
             const jsonStr = JSON.stringify(dict);
             Object.values(listeners).map(ws => ws.send(jsonStr))
         }
